@@ -33,11 +33,11 @@ rnn_types = ['SimpleRNN', 'LSTM', 'GRU']
 histories = {}
 for rnn_type in rnn_types:
   print(f"Training {rnn_type} model...")
-model = create_model(rnn_type)
-history = model.fit(x_train, y_train, batch_size=batch_size, epochs=5, validation_data=(x_test, y_test))
-histories[rnn_type] = history
-test_loss, test_acc = model.evaluate(x_test, y_test)
-print(f"Test accuracy: {test_acc}")
+  model = create_model(rnn_type)
+  history = model.fit(x_train, y_train, batch_size=batch_size, epochs=5, validation_data=(x_test, y_test))
+  histories[rnn_type] = history
+  test_loss, test_acc = model.evaluate(x_test, y_test)
+  print(f"Test accuracy: {test_acc}")
 
 def plot_history(histories, metric='accuracy'):
   plt.figure(figsize=(12, 8))
