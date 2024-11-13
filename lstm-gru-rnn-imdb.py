@@ -43,7 +43,7 @@ def plot_history(histories, metric='accuracy'):
   plt.figure(figsize=(12, 8))
   for rnn_type in histories:
     plt.plot(histories[rnn_type].history[metric], label=f'{rnn_type} training {metric}')
-  plt.plot(histories[rnn_type].history[f'val_{metric}'], label=f'{rnn_type} validation {metric}')
+    plt.plot(histories[rnn_type].history[f'val_{metric}'], label=f'{rnn_type} validation {metric}')
   plt.title(f'Model {metric.capitalize()} Comparison')
   plt.ylabel(metric.capitalize())
   plt.xlabel('Epochs')
